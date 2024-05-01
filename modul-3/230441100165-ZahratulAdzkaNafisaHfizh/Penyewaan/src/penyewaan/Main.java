@@ -22,7 +22,7 @@ public class Main {
             String model = input.next();
             char status;
             do{
-                System.out.print("Status(T=Tersedia, D=Disewakan: )");
+                System.out.print("Status(T=Tersedia, D=Disewakan: ");
                 status = input.next().charAt(0);
                 if (status !='T' && status !='D'){
                     System.out.println("Status tidak valid.Harap masukkan 'T'atau'D'");
@@ -38,13 +38,24 @@ public class Main {
                 System.out.println("Jenis kendaraan tidak valid.");
             }
         }
-        System.out.println("\nDaftar Kendaraan yang Telah Disewakan:");
+        System.out.println("\nDaftar Kendaraan :");
         for (Kendaraan kendaraan : daftarKendaraan) {
+            if (kendaraan != null && kendaraan.status == 'T') {
+                System.out.println("Jenis: " + kendaraan.jenis );
+                System.out.println("Merek: "+ kendaraan.merek );
+                System.out.println("Model: "+kendaraan.model); 
+                System.out.println("Status:Tersedia "); 
+                System.out.println("Tahun :"+kendaraan.tahun);
+            }
             if (kendaraan != null && kendaraan.status == 'D') {
-                System.out.println("Jenis: " + kendaraan.jenis + ", Merek: " + kendaraan.merek +
-                        ", Model: " + kendaraan.model + ", Tahun: " + kendaraan.tahun);
+                System.out.println("Jenis: " + kendaraan.jenis );
+                System.out.println("Merek: "+ kendaraan.merek );
+                System.out.println("Model: "+kendaraan.model); 
+                System.out.println("Status:Disewakan "); 
+                System.out.println("Tahun :"+kendaraan.tahun);
+            }
             }
         }
     }
-}
+
 
